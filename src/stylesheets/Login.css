@@ -1,0 +1,58 @@
+
+.outer{
+    width:100%;
+    height:100vh;
+    display: flex;
+}
+  
+  .inner{
+    border-radius: 8px;
+    justify-content: center;
+    min-width:360px;
+    margin:auto;
+    background-color: rgb(35, 35, 35);
+  }
+
+  .inner-padding{
+    padding:16px;
+    
+  }
+
+  input{
+    width:100%;
+    border:none;
+    padding:16px 0px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: rgb(66, 66, 66);
+    color:white;
+  }
+  .input{
+    padding:8px 0px;
+  }
+
+  .btn{
+    padding:8px 0px;
+  }
+
+  .btn input{
+    background-color: rgb(0, 190, 194);
+    color:white;
+  }
+
+  .heading{
+    font-size: 32px;
+    padding:16px 0px;
+    text-align: center;
+  }
+
+  .route{
+    text-align: center;
+    padding:16px 0px;
+  }
+
+  .anchor{
+    text-decoration: none;
+    color:rgb(0, 190, 194);
+    font-weight: bold;
+  }

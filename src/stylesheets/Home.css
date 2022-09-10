@@ -1,0 +1,94 @@
+.allCards{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+
+.outerCard{
+    padding:16px;
+}
+
+.out{
+    width:80%;
+    margin: auto;
+}
+
+.card{
+    padding:16px;
+    background-color: rgb(35, 35, 35);
+    min-width:240px;
+    border-radius: 16px;
+    border: 2px solid grey;
+    transition: 0.5s;
+}
+
+.card:hover{
+    background-color: rgb(53, 53, 53);
+    transition: 0.5s;
+}
+
+.main-text{
+    padding:24px 0px;
+}
+
+.main-text h2{
+    padding:12px 0px;
+    font-size: 32px;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    padding:4px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    
+}
+
+#success{
+    color:rgb(162, 255, 105);
+    background-color: rgb(45, 96, 0);
+}
+
+#cancel{
+    color:rgb(255, 105, 105);
+    background-color: rgb(96, 0, 0);
+}
+
+.cancelSub{
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount{
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+}
+
+button{
+    border:none;
+    width:120px;
+    padding:12px;
+    border-radius: 8px;
+    color:white;
+    background-color: rgb(0, 190, 194);
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.border-gradient {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 4px;
+  }
+
+.border-gradient-green {
+    border-image-source: linear-gradient(to left, #5d5d5d, #383838);
+  }
+
+.subStatus{
+    margin:32px 0px 0px 0px;    
+}
