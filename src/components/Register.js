@@ -45,7 +45,7 @@ function Register() {
           let res = await fetch(`http://localhost:5000/register`, requestOptions)
           .then(response => response.json())
         .catch(error => console.log('error', error));
-        localStorage.setItem('token', res.token);
+        localStorage.setItem('token', res.user.token);
         navigate('/')
         
       }

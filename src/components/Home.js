@@ -54,7 +54,8 @@ let results = [];
     let res = await fetch(`http://localhost:5000/session?price=${price}`, requestOptions)
     .then(response => response.json())
     .catch(error => console.log('error', error));
-    if(res.session.status == 409){
+    console.log(res);
+    if(res.status == 409){
       openSnackbar('You already have a subscription')
     }
     if(res.session.url){
