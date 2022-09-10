@@ -33,13 +33,11 @@ let results = [];
         await fetch(`http://localhost:5000/allprices`, requestOptions)
           .then(response => response.json())
           .then(function(data){
-            //console.log(data);
-            setSubs(data)
+            setSubs(data.result)
           })
         .catch(error => console.log('error', error));
         }
         fetchSubs()
-        // console.log(res);
 
 }, []);
 
@@ -56,11 +54,11 @@ let results = [];
     let res = await fetch(`http://localhost:5000/session?price=${price}`, requestOptions)
     .then(response => response.json())
     .catch(error => console.log('error', error));
-    if(res.status == 409){
+    if(res.session.status == 409){
       openSnackbar('You already have a subscription')
     }
-    if(res.url){
-      window.location.replace(res.url);
+    if(res.session.url){
+      window.location.replace(res.session.url);
     }
   }
 
@@ -71,6 +69,10 @@ let results = [];
         <div><h3>Rich Panel</h3></div>
         <div><Link to="/allsubs">My subscriptions</Link></div>
     </div>
+    <div className="page-info">
+      <h1>All Plans available</h1>
+      <p>Find all the plans we provide</p>
+    </div>
     <div className="allCards">
     {subs.map(sub => {
       return (
@@ -79,7 +81,7 @@ let results = [];
           <div className="main-text">
             <p>{sub.name}</p>
             <div className="amount">
-            <h2>{sub.amount/100}</h2>
+            <h2>₹&nbsp;{sub.amount/100}</h2>
             <span>/{sub.recurring}</span>
             </div>
             

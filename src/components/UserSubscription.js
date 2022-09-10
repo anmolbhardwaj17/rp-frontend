@@ -23,8 +23,8 @@ function UserSubscription() {
             await fetch(`http://localhost:5000/subscription`, requestOptions)
               .then(response => response.json())
               .then(function(data){
-                if(data.length > 0){
-                  setSubs(data)
+                if(data.result.length > 0){
+                  setSubs(data.result)
                 }else{
                   openSnackbar('No subscription found')
                 }
@@ -36,8 +36,13 @@ function UserSubscription() {
     }, []);
 
     async function cancelPlan(event, subscriptionId){
+      const token = localStorage.getItem('token');
+      var myHeaders = new Headers();
+            myHeaders.append("Authorization", `Bearer ${token}`);
+            myHeaders.append("Content-Type", "application/json");
       var requestOptions = {
-          method: 'GET',
+          method: 'DELETE',
+          headers: myHeaders,
           redirect: 'follow'
         };
         let res = await fetch(`http://localhost:5000/deletesubscription?subId=${subscriptionId}`, requestOptions)
@@ -51,6 +56,10 @@ function UserSubscription() {
         <div><h3>Rich Panel</h3></div>
         <div><Link to="/">All subscriptions</Link></div>
     </div>
+    <div className="page-info">
+      <h1>Your subscriptions</h1>
+      <p>See that plan you chose</p>
+    </div>
     <div className="allCards">
         {subs.map(sub => {
       return (
@@ -62,9 +71,10 @@ function UserSubscription() {
             
             <a id="success" className="" href="">{sub.paymentStatus}</a>
             </div>
-            <h2>{sub.totalAmount/100}&nbsp;INR</h2>
-            <p>{sub.interval}</p>
-            <p>{sub.subscriptionId}</p>
+            <div className="amount">
+            <h2>₹&nbsp;{sub.totalAmount/100}</h2>
+            <span>/{sub.interval}</span>
+            </div>
             <div className="subStatus">
             <a onClick={event => cancelPlan(event,sub.subscriptionId)} id="cancel">Cancel</a>
             </div>

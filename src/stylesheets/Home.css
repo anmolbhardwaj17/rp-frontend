@@ -55,6 +55,7 @@ a{
 #cancel{
     color:rgb(255, 105, 105);
     background-color: rgb(96, 0, 0);
+    
 }
 
 .cancelSub{
@@ -85,10 +86,20 @@ button{
     border-width: 4px;
   }
 
+  .page-info{
+    padding:24px 0px;
+    text-align: center;
+  }
+
+  .page-info p{
+    padding-top:16px;
+    color:#898989;
+  }
+
 .border-gradient-green {
     border-image-source: linear-gradient(to left, #5d5d5d, #383838);
   }
 
 .subStatus{
-    margin:32px 0px 0px 0px;    
+    margin:48px 0px 0px 0px;    
 }

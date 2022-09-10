@@ -30,7 +30,6 @@ function Login() {
             "password": password
         }
         var myHeaders = new Headers();
-        //myHeaders.append("Authorization", `Bearer ${token}`);
         myHeaders.append("Content-Type", "application/json");
         var requestOptions = {
             method: 'POST',
@@ -41,7 +40,7 @@ function Login() {
           let res = await fetch(`http://localhost:5000/login`, requestOptions)
           .then(response => response.json())
         .catch(error => console.log('error', error));
-        localStorage.setItem('token', res.token);
+        localStorage.setItem('token', res.user.token);
         navigate('/')
 
          
