@@ -66,7 +66,7 @@ function UserSubscription() {
     <div className="login-out">
       <div className="out login-out bg">
     <div className="nav-outer">
-        <div><h3>Rich Panel</h3></div>
+        <div><h3>Richpanel</h3></div>
         <div ><Link className="subspage" to="/">All subscriptions</Link><a className="logout" onClick={event => logout(event)}>logout</a></div>
     </div>
         <div className="outer">

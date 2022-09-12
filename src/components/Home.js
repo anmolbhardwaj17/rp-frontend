@@ -72,7 +72,7 @@ async function logout(event){
       
 <div className="out">
 <div className="nav-outer">
-        <div className="homepage"><h3>Rich Panel</h3></div>
+        <div className="homepage"><h3>Richpanel</h3></div>
         <div><Link  to="/allsubs">My subscriptions</Link><a className="logout" onClick={event => logout(event)}>logout</a></div>
     </div>
     <div className="page-info">
