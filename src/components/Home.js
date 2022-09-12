@@ -41,6 +41,11 @@ let results = [];
 
 }, []);
 
+async function logout(event){
+  localStorage.removeItem('token');
+  navigate('/login')
+}
+
   async function buyPlan(event, price, product){
   const token = localStorage.getItem('token');
   var myHeaders = new Headers();
@@ -68,7 +73,7 @@ let results = [];
 <div className="out">
 <div className="nav-outer">
         <div className="homepage"><h3>Rich Panel</h3></div>
-        <div><Link  to="/allsubs">My subscriptions</Link></div>
+        <div><Link  to="/allsubs">My subscriptions</Link><a className="logout" onClick={event => logout(event)}>logout</a></div>
     </div>
     <div className="page-info">
       <h2>Choose the right plan for you</h2>

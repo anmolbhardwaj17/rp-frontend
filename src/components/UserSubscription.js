@@ -42,6 +42,11 @@ function UserSubscription() {
             fetchSubs()
     }, []);
 
+    async function logout(event){
+      localStorage.removeItem('token');
+      navigate('/login')
+    }
+
     async function cancelPlan(event, subscriptionId){
       const token = localStorage.getItem('token');
       var myHeaders = new Headers();
@@ -62,7 +67,7 @@ function UserSubscription() {
       <div className="out login-out bg">
     <div className="nav-outer">
         <div><h3>Rich Panel</h3></div>
-        <div ><Link className="subspage" to="/">All subscriptions</Link></div>
+        <div ><Link className="subspage" to="/">All subscriptions</Link><a className="logout" onClick={event => logout(event)}>logout</a></div>
     </div>
         <div className="outer">
             <div className="inner">
