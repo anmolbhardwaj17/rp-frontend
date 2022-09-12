@@ -1,3 +1,7 @@
+.out{
+    background-color: white;
+}
+
 .allCards{
     display:flex;
     flex-wrap: wrap;
@@ -14,18 +18,22 @@
     margin: auto;
 }
 
+.homepage{
+    color: black;
+}
+
 .card{
     padding:16px;
-    background-color: rgb(35, 35, 35);
+    background-color: rgb(255, 255, 255);
     min-width:240px;
     border-radius: 16px;
     border: 2px solid grey;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .card:hover{
-    background-color: rgb(53, 53, 53);
-    transition: 0.5s;
+    background-color: rgb(230, 230, 230);
+    transition: 0.2s;
 }
 
 .main-text{
@@ -39,7 +47,7 @@
 
 a{
     text-decoration: none;
-    color:white;
+    color:rgb(0, 0, 0);
     font-weight: bold;
     padding:4px 20px;
     border-radius: 20px;
@@ -83,7 +91,7 @@ button{
 .border-gradient {
     border: 2px solid;
     border-image-slice: 1;
-    border-width: 4px;
+    border-width: 2px;
   }
 
   .page-info{
@@ -96,10 +104,49 @@ button{
     color:#898989;
   }
 
-.border-gradient-green {
-    border-image-source: linear-gradient(to left, #5d5d5d, #383838);
-  }
-
 .subStatus{
     margin:48px 0px 0px 0px;    
+}
+
+
+.all{
+    display: flex;
+    justify-content: space-between;
+}
+
+.plans{
+    width:100%;
+    text-align: center;
+}
+
+.plans div{
+    border-bottom: 2px solid rgb(212, 212, 212);
+  }
+
+.big{
+    padding:24px 16px;
+    margin:8px 0px;
+    background-color:#1E4C90 ;
+    color:white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.plans button{
+    border:none;
+    width:120px;
+    padding:12px;
+    border-radius: 8px;
+    color:#1E4C90;
+    background-color: #a7caff;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.pp{
+    margin-top:21px;
+}
+
+.small{
+    padding:12px 0px;
 }

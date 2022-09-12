@@ -30,7 +30,7 @@ let results = [];
             headers: myHeaders,
             redirect: 'follow',
           };
-        await fetch(`http://localhost:5000/allprices`, requestOptions)
+        await fetch(`https://rp2022-backend.herokuapp.com/allprices`, requestOptions)
           .then(response => response.json())
           .then(function(data){
             setSubs(data.result)
@@ -51,7 +51,7 @@ let results = [];
       headers: myHeaders,
       redirect: 'follow'
     };
-    let res = await fetch(`http://localhost:5000/session?price=${price}`, requestOptions)
+    let res = await fetch(`https://rp2022-backend.herokuapp.com/session?price=${price}`, requestOptions)
     .then(response => response.json())
     .catch(error => console.log('error', error));
     console.log(res);
@@ -67,14 +67,55 @@ let results = [];
       
 <div className="out">
 <div className="nav-outer">
-        <div><h3>Rich Panel</h3></div>
-        <div><Link to="/allsubs">My subscriptions</Link></div>
+        <div className="homepage"><h3>Rich Panel</h3></div>
+        <div><Link  to="/allsubs">My subscriptions</Link></div>
     </div>
     <div className="page-info">
-      <h1>All Plans available</h1>
-      <p>Find all the plans we provide</p>
+      <h2>Choose the right plan for you</h2>
     </div>
-    <div className="allCards">
+    <div className="all">
+      <div className="allLabels plans">
+        <div className="big">Plans</div>
+        <div className="small"><p>Video quality</p></div>
+        <div className="small"><p>Resolution</p></div>
+        <div className="small pp"><p>Monthly price</p></div>
+        <div className="small pp"><p>Yearly price</p></div>
+        <div className="big"><p>No. of devices</p></div>
+      </div>
+      <div className="plans">
+        <div className="big">Basic</div>
+        <div className="small"><p>Good</p></div>
+        <div className="small"><p>480p</p></div>
+        <div className="small"><button onClick={event => buyPlan(event, 'price_1LelkGSDg3jfkNpBmOrvOeAk', 'prod_MNWn0TW4GaNxvt')}>100 INR</button></div>
+        <div className="small"><button onClick={event => buyPlan(event, 'price_1LelkGSDg3jfkNpBp5itV4W4', 'prod_MNWn0TW4GaNxvt')}>1000 INR</button></div>
+        <div className="big"><p>1</p></div>
+      </div>
+      <div className="plans">
+        <div className="big">Standard</div>
+        <div className="small"><p>Good</p></div>
+        <div className="small"><p>720p</p></div>
+        <div className="small"><button onClick={event => buyPlan(event, 'price_1LelmJSDg3jfkNpBzIFpQUaR', 'prod_MNWpSpTtfTGFrz')}>200 INR</button></div>
+        <div className="small"><button onClick={event => buyPlan(event, 'price_1LelmJSDg3jfkNpBdkp6Hu61', 'prod_MNWpSpTtfTGFrz')}>2000 INR</button></div>
+        <div className="big"><p>3</p></div>
+      </div>
+      <div className="plans">
+        <div className="big">Premium</div>
+        <div className="small"><p>Better</p></div>
+        <div className="small"><p>1080p</p></div>
+        <div className="small"><button onClick={event => buyPlan(event, 'price_1LelnkSDg3jfkNpBIcXwRR80', 'prod_MNWrlzYfpfqdNx')}>500 INR</button></div>
+        <div className="small"><button onClick={event => buyPlan(event, 'price_1LelnkSDg3jfkNpBdGbxqEgd', 'prod_MNWrlzYfpfqdNx')}>5000 INR</button></div>
+        <div className="big"><p>5</p></div>
+      </div>
+      <div className="plans">
+        <div className="big">Regular</div>
+        <div className="small"><p>Best</p></div>
+        <div className="small"><p>480p</p></div>
+        <div className="small"><button onClick={event => buyPlan(event, 'price_1LelopSDg3jfkNpBw6p7ksmD', 'prod_MNWsH96UYK3d4G')}>700 INR</button></div>
+        <div className="small"><button onClick={event => buyPlan(event, 'price_1LelopSDg3jfkNpB5c5Lkd2g', 'prod_MNWsH96UYK3d4G')}>7000 INR</button></div>
+        <div className="big"><p>10</p></div>
+      </div>
+    </div>
+    {/* <div className="allCards">
     {subs.map(sub => {
       return (
         <div className="outerCard ">
@@ -94,7 +135,7 @@ let results = [];
         </div>
       )
     })}
-    </div>
+    </div> */}
 </div>
             
             

@@ -1,0 +1,67 @@
+.login-out{
+    background-color: #1E4C90;
+  }
+
+  .flex{
+    display: flex;
+    align-items: center;
+  }
+
+  .subspage{
+    color:white;
+  }
+
+  .outline-btn{
+        border:none;
+        width:120px;
+        padding:12px;
+        border-radius: 4px;
+        color:#1E4C90;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid #1E4C90;
+        font-weight: bold;
+        cursor:pointer;
+  }
+
+  .button-padding{
+    padding:24px 0px;
+  }
+
+  .space{
+    justify-content: space-between;
+  }
+
+  .plan{
+    padding:16px 0px;
+  }
+
+  .plan h2{
+    font-size: 32px;
+  }
+
+  .bg{
+    background-color: #1E4C90 !important;
+  }
+
+  .cancel{
+    padding:0px;
+    color:#1E4C90;
+
+  }
+
+  .active{
+    color:#2d64b6;
+    background-color: #c6ddff;
+    padding:2px 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+
+  .more-info{
+    padding:8px;
+    font-size: 12px;
+    border-radius: 8px;
+    background-color: rgb(224, 224, 224);
+    color:rgb(111, 111, 111)
+  }

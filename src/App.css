@@ -8,8 +8,11 @@
     border-image-source: linear-gradient(to left, #5d5d5d, #383838);
   }
 
+  
+
   .nav-outer{
     display: flex;
     padding:24px 0px;
     justify-content: space-between;
+    color:white;
 }

@@ -1,9 +1,11 @@
 import {React, useState, useEffect} from 'react';
 import '../stylesheets/Login.css';
 import {useNavigate, Link} from 'react-router-dom';
+import { useSnackbar } from 'react-simple-snackbar';
 
 function Login() {
     const navigate = useNavigate();
+    const [openSnackbar, closeSnackbar] = useSnackbar()
     const [email , setEmail] = useState('');
     const [password , setPassword] = useState('');
 
@@ -37,27 +39,31 @@ function Login() {
             redirect: 'follow',
             body: JSON.stringify(loginData)
           };
-          let res = await fetch(`http://localhost:5000/login`, requestOptions)
+          let res = await fetch(`https://rp2022-backend.herokuapp.com/login`, requestOptions)
           .then(response => response.json())
         .catch(error => console.log('error', error));
+        if(res.status == 400){
+            openSnackbar('Login failed')
+        }
         localStorage.setItem('token', res.user.token);
         navigate('/')
 
          
       }
   return (
-    <div className="outer">
+    <div className="login-out">
+        <div className="outer">
             <div className="inner">
                 <div className="inner-padding">
-                <h2 className="heading">Login</h2>
+                <p className="heading">Login to your account</p>
                 <form onSubmit={(e) => {handleSubmit(e)}}>
                 <div className="input">
-                    <label htmlFor='email'>Email</label><br/><br/>
-                    <input type="email" value={email} name="email" onChange={(e) => {handleEmailChange(e)}}/>
+                    <label htmlFor='email'>Email</label><br/>
+                    <input type="email" value={email} name="email" placeholder='manoj@richpanel.com' onChange={(e) => {handleEmailChange(e)}}/>
                 </div>
                 <div className="input">
-                    <label htmlFor='password'>Password</label><br/><br/>
-                    <input type="password" value={password} name="password" onChange={(e) => {handlePasswordChange(e)}}/>   
+                    <label htmlFor='password'>Password</label><br/>
+                    <input type="password" value={password} name="password" placeholder='Enter your password' onChange={(e) => {handlePasswordChange(e)}}/>   
                 </div>
                 <div className="btn">
                 <input type="submit" value="Login"/>
@@ -69,6 +75,8 @@ function Login() {
                 </div>
             </div>
     </div>
+    </div>
+    
   )
 }
 
